@@ -9,6 +9,7 @@ import shutil
 from copy import deepcopy
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
+from ruamel.yaml.scalarstring import DoubleQuotedScalarString as DQ
 
 # ================= YAML =================
 yaml = YAML()
@@ -178,6 +179,8 @@ def update_pipeline(path, created, repo, dry_run):
             "task": CommentedMap({
                 "name": "deployApp",
                 "kittFilePath": f"{os.path.basename(path)}/{f}",
+                "sha": DQ("{{$.kitt.build.commitEvent.commitId}}"),
+                "branch":DQ("{{$.kitt.build.commitEvent.currentBranch}}"),
                 "sync": False,
                 "executionScope": "child"
             })
@@ -278,3 +281,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
