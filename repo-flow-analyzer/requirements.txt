@@ -1,0 +1,12 @@
+# No external dependencies required!
+# This analyzer uses only Python standard library:
+# - re (regular expressions)
+# - pathlib (file operations)
+# - csv (CSV export)
+# - logging (logging)
+# - argparse (CLI)
+# - dataclasses (type safety)
+# - enum (enumerations)
+# - typing (type hints)
+
+# Python 3.10+ required
