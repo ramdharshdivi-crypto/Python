@@ -386,10 +386,4 @@ Feel free to extend the analyzer by:
 
 Created with ❤️ for Spring Boot developers
 
----
-
-## 🐕 Made with Code Puppy
-
-**Ramy the Code Puppy** - Your loyal AI code assistant for analyzing, understanding, and improving Spring Boot architectures!
-
 Questions? Need help? Run with `--verbose` to see detailed analysis logs.
