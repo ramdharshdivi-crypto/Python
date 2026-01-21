@@ -1,0 +1,79 @@
+# Agent Hub Platform Configuration
+
+# DB2 Monitoring Agent
+db2_agent:
+  enabled: true
+  
+  # DB2 Database Configuration
+  db2:
+    jdbc_url: ""
+    username: ""
+    password: ""
+    # Query to execute for health check
+    # Use {batch_id} placeholder - pass actual value via --batch-id argument
+    query: "SELECT;"
+    # Timeout in seconds
+    timeout: 100
+  
+  # Kubernetes Configuration
+  kubernetes:
+    namespace: "default"
+    pod_name: "your-pod-name"  # or use label_selector
+    # label_selector: "app=my-app"
+    kubeconfig_path: null  # defaults to ~/.kube/config
+    context: null  # defaults to current context
+
+# Repository Analyzer Agent
+repo_agent:
+  enabled: true
+  default_analysis_depth: "full"  # "quick" or "full"
+  output_formats:
+    - "json"
+    - "markdown"
+  max_file_size_mb: 10
+  ignore_patterns:
+    - "node_modules/**"
+    - "venv/**"
+    - ".git/**"
+    - "**/*.pyc"
+
+# JIRA Agent (Coming Soon)
+jira_agent:
+  enabled: false
+  jira_url: "https://jira.example.com"
+  username: "your-username"
+  api_token: "your-api-token"
+  default_project: "PROJ"
+
+# Confluence Agent (Coming Soon)
+confluence_agent:
+  enabled: false
+  confluence_url: "https://confluence.example.com"
+  username: "your-username"
+  api_token: "your-api-token"
+  space_key: "DOCS"
+
+# Akeyless Agent (Coming Soon)
+akeyless_agent:
+  enabled: false
+  akeyless_url: "https://akeyless.example.com"
+  access_id: "your-access-id"
+  access_key: "your-access-key"
+
+# Application Settings
+app:
+  # Logging
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "agent_hub.log"
+  
+  # Security
+  enable_auth: false  # Set to true in production
+  api_key: "your-api-key"  # Required if enable_auth is true
+  
+  # Performance
+  max_concurrent_agents: 3
+  request_timeout: 60
+  
+  # Context
+  context_retention_hours: 24
+  max_context_size_mb: 10

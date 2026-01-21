@@ -1,0 +1,55 @@
+# DB2 Database Configuration
+db2:
+  # Connection Method 1: JDBC URL (RECOMMENDED)
+  # Use jdbc_url for enterprise environments with standardized connection strings
+  jdbc_url: "jdbc:db2://DSN5DRDA.wal-mart.com:444/DSN5"
+  username: "vn59ikg"
+  password: "ramdiv12"
+  
+  # Connection Method 2: Traditional (host/port/database)
+  # If jdbc_url is NOT provided, these will be used instead:
+  # host: "db2-server.example.com"
+  # port: 50000
+  # database: "SAMPLE"
+  # username: "db2admin"
+  # password: "your-secure-password"
+  
+  # Query to execute for health check (simple SELECT is recommended)
+  query: "SELECT 1 FROM SYSIBM.SYSDUMMY1"
+  # Timeout in seconds
+  timeout: 10
+
+# Kubernetes Configuration
+kubernetes:
+  # Namespace where the pod is running
+  namespace: "default"
+  # Pod name or label selector
+  # Use pod_name for specific pod, or use label_selector for dynamic selection
+  pod_name: "my-app-pod-abc123"  # Exact pod name
+  # label_selector: "app=my-app"  # Alternative: select by label
+  
+  # Optional: Path to kubeconfig file (defaults to ~/.kube/config)
+  kubeconfig_path: null
+  
+  # Context to use (defaults to current context)
+  context: null
+
+# Output Configuration
+output:
+  # Format: "json" or "text"
+  format: "json"
+  # Verbose output includes more details
+  verbose: true
+  # Log file path (optional)
+  log_file: "monitoring.log"
+
+# Monitoring Configuration
+monitoring:
+  # Run as daemon (continuous monitoring)
+  daemon: false
+  # Interval in seconds (if daemon mode)
+  interval: 60
+  # Alert thresholds
+  alert:
+    db2_response_time_ms: 1000  # Alert if query takes longer
+    pod_restart_threshold: 3     # Alert if restarts exceed this

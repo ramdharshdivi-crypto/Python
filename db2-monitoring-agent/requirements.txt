@@ -1,0 +1,17 @@
+# DB2 Database Connectivity (choose one based on what you have installed)
+# Option 1: IBM DB2 native driver (requires IBM Data Server Driver installed)
+# ibm-db>=3.2.0
+# ibm-db-sa>=0.4.0
+
+# Option 2: pyodbc (requires DB2 ODBC driver configured)
+pyodbc>=5.0.0
+
+# Kubernetes Client
+kubernetes>=28.1.0
+
+# Configuration Management
+PyYAML>=6.0.1
+
+# Utilities
+python-dateutil>=2.8.2
+colorama>=0.4.6  # For colored terminal output

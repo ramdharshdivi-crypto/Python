@@ -1,0 +1,13 @@
+INFO:     Started server process [2928]
+INFO:     Waiting for application startup.
+2026-01-07 18:55:43,337 - main - INFO - Starting Agent Hub Platform...
+2026-01-07 18:55:43,337 - main - INFO - Loading config from: C:\Users\vn59ikg\Documents\agent-hub-platform\backend\config\agents.yaml
+2026-01-07 18:55:43,341 - main - INFO - Config loaded successfully
+2026-01-07 18:55:43,341 - main - INFO - Registering agents...
+2026-01-07 18:55:43,342 - main - INFO - DB2 agent disabled
+2026-01-07 18:55:43,342 - main - INFO - Repository agent disabled
+2026-01-07 18:55:43,342 - main - INFO - Registered 0 agents
+2026-01-07 18:55:43,342 - main - INFO - Agent Hub Platform ready!
+2026-01-07 18:55:43,342 - main - INFO - Startup complete!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
